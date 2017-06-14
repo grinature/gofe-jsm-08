@@ -1,0 +1,256 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+
+.wrapper-main {
+    box-sizing: border-box;
+
+    margin-top: 0;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 1rem;
+
+    width: 80%;
+    width: 960px;
+
+    /* Test */
+    /* my own mild green-colour, like asalad */
+    background-color: rgba(225, 242, 176, 0.5);
+}
+
+.tab-wrapper {
+    overflow: auto;
+
+    padding: 0.75rem;
+    padding-bottom: 0;
+
+    width: 80%;
+    width: 60%;
+
+    height: 24rem;
+
+    background-color:  rgba(225, 242, 176, 0.6);
+}
+
+    .tab-container {
+        padding: 0.4rem;
+        padding-bottom: 0;
+
+        border: 1px solid rgba(114, 148, 49, 1.0);
+        border-radius: 3px;
+
+        background-color: rgba(177, 246, 250, 1.0);
+        background-color: rgba(236, 255, 187, 1.0);
+    }
+
+        .tab-header {
+            padding: 0.45rem 0.35rem 0;
+
+            border: 1px solid rgba(114, 148, 49, 1.0);
+            border-radius: 3px;
+
+            background-color: rgba(245, 251, 205, 1.0);
+            background-color: rgba(191, 243, 188, 1.0);
+
+        }
+
+            .tab-item {
+                float: left;
+
+                margin-right: 0.4rem;
+
+
+                /* Test Mark-Up */
+                padding-left: 0.74rem;
+                padding-right: 0.74rem;
+
+                line-height: 1.4rem;
+            }
+
+                .tab-item__name {
+                    padding: 0.24rem 0.4rem 0.12rem;
+
+                    /* Test Mark-Up */
+                    background-color: rgba(53, 221, 80, 1);
+
+                    background-color: rgba(201, 247, 207, 1);
+
+                    color: rgba(14, 188, 194, 1.0);
+
+                    font-family: sans-serif;
+
+                    text-decoration: none;
+
+                    /*line-height: 1.4rem;*/
+
+                    cursor: pointer;
+                }
+
+                .tab-item_theme:not(.tab-item_current) .tab-item__name:hover {
+                    border-top: 2px solid orange;
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+
+                .tab-item_current .tab-item__name {
+                /*.tab-item_current .tab-item__name:hover {*/
+                    border-top: 2px solid rgba(101, 220, 241, 1);
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                }
+
+
+            .tab-item_theme {
+                background-color: rgba(223, 241, 101, 1.0);
+            }
+
+            /*.tab-item_current {
+                background-color: rgba(101, 220, 241, 1);
+            }*/
+
+            .tab-item_theme.tab-item_current {
+                background-color: rgba(101, 220, 241, 1);
+
+                /*font-weight: bold;*/
+            }
+
+            .tab-item_theme:not(.tab-item_current):hover {
+                background-color: orange;
+            }
+
+
+        .tab-content__ribbon {
+            background-color: rgba(251, 250, 178, 1.0);
+        }
+
+            .tab-content__container {
+                display: none;
+
+                padding: 1.2rem 1rem 1rem;
+
+                background-color: rgba(166, 227, 255, 1.0);
+                background-color: rgba(236, 255, 187, 1.0);
+
+                color: rgba(38, 126, 38, 1);
+            }
+
+            .tab-content__container.tab-content__container_current {
+                display: list-item;
+            }
+
+
+                .tab-content__container p {
+                    margin-bottom: 0.65rem;
+
+                    background-color: rgba(202, 240, 242, 1);
+                    background-color: rgba(212, 253, 133, 1.0);
+                    background-color: rgba(236, 255, 187, 1.0);
+
+                    color: rgba(38, 126, 38, 1);
+                    color: rgba(32, 154, 32, 1.0);
+                }
+
+                .tab-content__container h1 {
+                    margin-bottom: 0.25rem;
+
+                    background-color: rgba(199, 246, 164, 1);
+
+                    color: rgba(15, 156, 15, 1);
+                }
+
+                .tab-content__container pre {
+                    background-color: rgba(164, 242, 246, 1);
+                    background-color: cornsilk;
+                    background-color: rgba(255, 248, 220, 0.51);
+
+                    color: rgba(26, 132, 219, 1);
+                }
+
+
+                .tab-content__container p:last-child {
+                    margin-bottom: auto;
+                }
+
+.form-wrapper {
+    overflow: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    width: 60%;
+
+    padding: 0.75rem;
+    /*padding-bottom: 0;*/
+
+    width: 80%;
+    width: 60%;
+
+    background-color: rgb(150, 237, 245);
+}
+
+    .form-wrapper form {
+        padding: 0.6rem 0.4rem;
+
+        border: 1px solid green;
+    }
+
+    .control-wrapper {
+        position: relative;
+
+        margin-bottom: 0.4rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .form-wrapper label {
+        float: left;
+        width: 25%;
+        padding: 0.2rem 0.4rem;
+
+        color: rgba(23, 142, 17, 1.0);
+
+        font-weight: bold;
+    }
+
+    .form-wrapper input {
+        float: left;
+        width: 35%;
+        padding: 0.2rem 0.4rem;
+
+        background-color: rgba(215, 245, 244, 1.0);
+        color: rgba(23, 142, 17, 1.0);
+
+        font-weight: bold;
+
+        outline-color: rgba(22, 109, 24, 1.0);
+    }
+
+    .js-wrapper-tooltip {
+        position: absolute;
+        display: none;
+
+        width: 35%;
+        padding: 0.2rem 0.4rem;
+        padding: 0.12rem 0.14rem;
+
+        background-color: rgba(215, 245, 244, 1.0);
+        color: rgba(23, 142, 17, 1.0);
+
+        /*font-weight: bold;*/
+
+        border: 1px solid green;
+        border-radius: 4px;
+        box-shadow: 0 0 5px 1px rgba(22, 123, 134, 1.0);
+    }

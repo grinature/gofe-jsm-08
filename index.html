@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Homework - Modules 07,08</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/reset-em.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script src="js/logger.js"></script>
+    <!-- <script src="js/multitabs.js"></script> -->
+
+    <!-- <script async="false" src="js/logger.js"></script> -->
+    <script async="true" src="js/multitabs.js"></script>
+
+</head>
+<body>
+
+  <div class="wrapper-main">
+
+        <div class="tab-wrapper">
+            <div class="tab-container">
+
+                <ul class="tab-header clearfix">
+                    <!-- <li class="tab-item tab-item_theme"> -->
+                    <li class="tab-item tab-item_theme tab-item_current">
+                        <!-- <span>Some text</span> -->
+                        <a href="" class="tab-item__name">Feature Queries</a>
+                    </li>
+                    <li class="tab-item tab-item_theme">
+                        <a href="" class="tab-item__name">Grid Layout</a>
+                    </li>
+                    <li class="tab-item tab-item_theme">
+                        <a href="" class="tab-item__name">Native Variables</a>
+                    </li>
+                </ul>    <!-- eof tab-header -->
+
+                <ul class="tab-content__ribbon">
+
+                    <li class="tab-content__container tab-content__container_current">
+                        <p>A while ago, I wrote about Feature Queries being the one CSS feature I really want. Well, now its basically here! It is now supported in every major browser (Opera Mini included) besides Internet Explorer.</p>
+                        <p>Feature Queries, using the @supports rule, allow us to wrap CSS in a conditional block that will only be applied if the current user agent supports a particular CSS property-value pair. A simple example of this is to only apply Flexbox styles to browsers that support display: flex</p>
+                        <p>
+                            <pre>
+                                <code>
+                                    @supports ( display: flex ) {
+                                      .foo { display: flex; }
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+
+                        <p>
+                            Additionally, using operators like and and not, we can create even more complicated feature queries. For example, we can detect if a browser only supports the old Flexbox syntax
+                            <pre>
+                                <code>
+                                    @supports ( display: flexbox )
+                                              and
+                                              ( not ( display: flex ) ) {
+                                      .foo { display: flexbox; }
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque maxime expedita ad repellat, neque aut at quos odit alias saepe corrupti, ratione voluptates sequi laborum vero hic, eius voluptas?</p>
+
+                    </li>
+                    <li class="tab-content__container">
+                        <p>The CSS Grid Layout Module defines a system for creating grid-based layouts. It has similarities with the Flexbible Box Layout Module, but is more specifically designed for page layouts, and thus has a number of different features.</p>
+                        <h1>Explicit Item Placement</h3>
+                        <p>
+                            A grid is made up of the Grid Container (created with display: grid), and Grid Items (it's children). In our CSS, we can easily and explicitly orgnise the placement and order of the grid items, independent of their placement in the markup.
+                        </p>
+                        <p>For example, in my article on The Holy Grail Layout with CSS Grid, I showed how we can use this module to create the infamous "holy grail layout".</p>
+                        <h1>Flexible Lengths</h1>
+                        <p>The CSS Grid Module introduces a new length unit, the fr unit, which represents a fraction of the free space left in the grid container.</p>
+                        <p>This allows us to apportion heights and widths of grid items depending on the available space in the grid container. For example, in the Holy Grail Layout, I wanted the main section to take up all the remaining space after the two sidebars. To do that, I simply wrote</p>
+                        <p></p>
+                    </li>
+                    <li class="tab-content__container">
+                        <p>Lastly, native CSS Variables (Custom Properties for Cascading Variables Module). This module introduces a method for creating author-defined variables, which can be assigned as values to CSS properties.</p>
+                        <p>For example, if we have a theme colour we are using in several places in our stylesheet, we can abstract this out into a variable and reference that variable, instead of writing out the actual value multiple times.</p>
+                        <p>This is something we have been able to do with the help of CSS pre-processors like SASS, but CSS Variables have the advantage of living in the browser. This means that their values can be updated live. To change the --theme-colour property above, for example, all we have to do is the following</p>
+                    </li>
+
+                </ul>    <!-- eof tab-content__ribbon -->
+
+
+            </div> <!-- eof tab-container -->
+        </div> <!-- eof tab-wrapper -->
+
+  </div>    <!-- eo wrapper-main -->
+
+</body>
+</html>
