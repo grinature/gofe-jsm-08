@@ -382,7 +382,7 @@ function TooltipForm(tooltipFormData = null) {
         }
 */
     ];
-
+    let $tooltipAllControl = null;
     let $tooltipFormWidget = buildTooltipForm();
 
     /*  Function Declarations ... */
@@ -393,7 +393,7 @@ function TooltipForm(tooltipFormData = null) {
         let $form = jqNewElement( 'form', null, null, null, { action : '#', method : 'post' } );
         $tooltipForm = $form;
 
-        let $fieldSet = jqNewElement( 'fieldset' );
+        let $fieldSet = jqNewElement( 'fieldset', null, 'form__control-set' );
 
         for( let controlCounter = 0, tooltipFormVolume = tooltipFormData.length; controlCounter < tooltipFormVolume; controlCounter++ ) {
             let $controlWrapper = jqNewElement( 'div', null, [ 'control-wrapper', 'clearfix' ] );
@@ -414,7 +414,10 @@ function TooltipForm(tooltipFormData = null) {
             tooltipLocationList.push( { $controlWrapper, $input, $tooltip } );
         }
 
+        $tooltipAllControl = jqNewElement( 'button', null, 'control__tooltip-all', 'Show help', { type : 'button' }  );
+
         jqAddElement( $fieldSet, $form );
+        jqAddElement( $tooltipAllControl, $form );
         jqAddElement( $form, $formWrapper );
 
         // the base for a tooltip-Form has been built !
@@ -480,17 +483,40 @@ function TooltipForm(tooltipFormData = null) {
 
     }
 
+    function tooltipAllHandler(event) {
+        /*  We use button of 'button'-type here.
+            We don't need event.preventDefault() call until we need a button of 'submit'-type.
+        */
+
+        oLogger.log('Start of <tooltipAllHandler>');
+
+        // oLogger.log( `tooltipAllHandler handlerCounter = ${++handlerCounter}` );
+        oLogger.log( `event.Type = ${event.type}` );
+        oLogger.log( `event.eventPhase = ${event.eventPhase}` );
+
+        for( let tooltipCounter = 0, tooltipVolume = tooltipLocationList.length; tooltipCounter < tooltipVolume; tooltipCounter++ ) {
+            tooltipLocationList[ tooltipCounter ].$tooltip.fadeIn( 400 );
+        }
+
+        oLogger.log('End of <tooltipAllHandler>');
+    }
 
     this.makeTooltip = function () {
         if( isBaseTooltipFormBuilt ) {
             setTooltipFormLocation();
 
-            //tooltipHandler()
             $tooltipForm.on(
                 'focusin focusout mouseover mouseout',
                 'input',
                 null,
                 tooltipHandler.bind( this )
+            );
+
+            $tooltipForm.on(
+                'click',
+                '.control__tooltip-all',
+                null,
+                tooltipAllHandler.bind( this )
             );
         }
     };
