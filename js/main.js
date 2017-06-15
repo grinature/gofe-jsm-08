@@ -542,8 +542,6 @@ let formWithTooltip = null,
 // jQuery-based DOMContentLoaded-event handling ...
 $( function() {
 
-    debugger;
-
     tabNavi = new MultiTabsUI( tabContainerData_01 );
     jqAddElement( tabNavi.getMultiTabsDOMTree(), $( '.wrapper-main' ), 'first' );
 
