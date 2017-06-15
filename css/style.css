@@ -207,6 +207,13 @@ html {
         border: 1px solid green;
     }
 
+    .form__control-set {
+        padding-top: 0.6rem;
+        padding-bottom: 0.2rem;
+
+        border: 1px solid rgb(100, 181, 100);
+    }
+
     .control-wrapper {
         position: relative;
 
@@ -253,4 +260,17 @@ html {
         border: 1px solid green;
         border-radius: 4px;
         box-shadow: 0 0 5px 1px rgba(22, 123, 134, 1.0);
+    }
+
+    .control__tooltip-all {
+        padding: 0.3rem 1.3rem;
+
+        border: 1px solid rgb(100, 181, 100);
+
+        background-color: rgb(115, 231, 242);
+        color: green;
+
+        font-family: serif;
+        font-size: 1rem;
+        font-weight: bold;
     }
